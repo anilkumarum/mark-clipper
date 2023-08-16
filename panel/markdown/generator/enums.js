@@ -1,0 +1,63 @@
+export const blockElements = new Set([
+	"address",
+	"article",
+	"aside",
+	"blockquote",
+	"div",
+	"dd",
+	"dl",
+	"dt",
+	"figcaption",
+	"footer",
+	"header",
+	"h1",
+	"h2",
+	"h3",
+	"h4",
+	"h5",
+	"h6",
+	"li",
+	"ol",
+	"ul",
+	"hr",
+	"main",
+	"nav",
+	"p",
+	"section",
+	"tr",
+]);
+
+export const BlockMarker = {
+	h1: "#",
+	h2: "##",
+	h3: "###",
+	h4: "####",
+	h5: "#####",
+	h6: "######",
+	li: "-",
+	blockquote: ">",
+	hr: "---",
+};
+
+export const inlineMarkerClass = {
+	b: "bold",
+	cite: "italic",
+	code: "code",
+	del: "strikethrough",
+	dfn: "italic",
+	em: "italic",
+	i: "italic",
+	kbd: "code",
+	mark: "highlight",
+	strong: "bold",
+	var: "italic",
+};
+
+export const InlineClassMark = {
+	italic: "*",
+	bold: "**",
+	"bold-italic": "***",
+	highlight: "==",
+	strikethrough: "~~",
+	code: "`",
+};

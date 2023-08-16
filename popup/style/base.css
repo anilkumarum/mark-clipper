@@ -1,0 +1,128 @@
+:root {
+	--card: 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	--main-clr: hsl(323, 93%, 32%);
+	--menu-bgc: #fff;
+	--bg-bgc: hsl(0, 0%, 94%);
+	--popup-bgc: hsl(0, 0%, 100%);
+	--txt-clr: black;
+	--input-bgc: white;
+	--toast-bgc: #333;
+	--toast-txt: rgb(255, 208, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--card: 0 1px 4px rgba(200, 200, 200, 0.2), 0 1px 2px rgba(200, 200, 200, 0.3);
+		--bg-bgc: hsl(0, 0%, 15%);
+		--txt-clr: #bdc1c6;
+		--border: 1.6px solid rgb(180, 180, 180);
+		--popup-bgc: hsl(0, 0%, 25%);
+		--input-bgc: hsl(0, 0%, 25%);
+		--toast-bgc: #5e5f5f;
+		--toast-txt: rgb(245, 140, 3);
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-size-adjust: 100%;
+	min-width: 16rem;
+	overflow-x: hidden;
+	margin: 0;
+	text-rendering: optimizeSpeed;
+	color: var(--txt-clr);
+	background-color: var(--bg-bgc);
+}
+
+select,
+input[type="text"] {
+	border: var(--border);
+	border-radius: 4px;
+	background-color: var(--input-bgc);
+	color: var(--txt-clr);
+	padding: 0.3em 0.5em;
+	font-family: inherit;
+}
+
+kbd {
+	font-weight: normal;
+	font-size: small;
+}
+
+h2 {
+	text-align: center;
+}
+
+.vault-list {
+	display: block;
+	text-align: center;
+}
+
+button {
+	border: none;
+	border-radius: 3px;
+	padding: 0.5em 0.6em;
+	font-weight: bold;
+	font-size: medium;
+	color: #ffff;
+	cursor: pointer;
+	box-shadow: var(--card);
+	background-color: var(--btn-clr, var(--main-clr));
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-inline: 1.5em;
+	position: relative;
+
+	/* &::after {
+		content: " ";
+		position: absolute;
+		inset: 0;
+		box-shadow: 2px 2px 0.7em 0 rgb(255, 0, 0, 0.5);
+		border-radius: 0.4em;
+		opacity: 0;
+		transition: opacity 1000ms ease-in-out;
+	} */
+
+	&:hover::after {
+		opacity: 1;
+	}
+
+	&:active {
+		outline: 1px dashed red;
+	}
+}
+
+/* snackbar  */
+#snackbar {
+	min-width: 8em;
+	background-color: var(--toast-bgc);
+	color: var(--toast-txt);
+	text-align: center;
+	border-radius: 1em;
+	padding: 0.6em;
+	position: fixed;
+	z-index: 1000;
+	left: 40%;
+	bottom: 2em;
+	width: max-content;
+	translate: 0 200%;
+	animation: in-out 4s ease-out;
+}
+
+@keyframes in-out {
+	10%,
+	90% {
+		translate: 0 0;
+	}
+}

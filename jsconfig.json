@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "nodenext",
+		"target": "esnext",
+		"module": "esnext",
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+
+		"baseUrl": ".",
+		"checkJs": true
+	},
+	"exclude": ["build"],
+	"typeAcquisition": { "include": ["chrome"] }
+}

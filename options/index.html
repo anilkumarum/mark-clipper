@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options for markClipper</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/block.css">
+    <link rel="stylesheet" href="./style/config.css">
+    <script type="module" src="./options.js"></script>
+</head>
+
+<body>
+    <h2>🛠️ Configuration </h2>
+    <details open>
+        <summary>Add ContentMenu on</summary>
+        <ul id="context_menu">
+            <li>
+                <label>
+                    <input type="checkbox" value="image" checked>
+                    <span>Image</span>
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="checkbox" value="audio">
+                    <span>Audio</span>
+                </label>
+            </li>
+        </ul>
+    </details>
+
+
+    <details open>
+        <summary>Frontmatter properties</summary>
+
+        <ul>
+            <li>
+                <label>
+                    <input type="checkbox" checked>
+                    <span>Created</span>
+                    <select name="" id=""></select>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" checked>
+                    <span>Source</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" checked>
+                    <span>Tags</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" checked>
+                    <span>Author</span>
+                    <input type="text">
+                </label>
+            </li>
+        </ul>
+    </details>
+
+    <section class="shortcut-list card" id="settingList">
+        <!-- <header>🛠️ Configuration </header> -->
+        <blockquote>
+
+            <div class="key-item">
+                <div class="setting-info">
+                    <h3>Citation format</h3>
+                    <div>Citation format</div>
+                </div>
+
+                <select name="font-list" id="font-family">
+                    <option value=""></option>
+                </select>
+            </div>
+
+            <div class="key-item">
+                <div class="setting-info">
+                    <h3>Date format</h3>
+                    <div>Date format</div>
+                </div>
+
+                <select name="font-list" id="font-family">
+                    <option value="">DD/MM/YY HH/MM</option>
+                    <option value="">MM/DD/YY HH/MM</option>
+                </select>
+            </div>
+            <div class="key-item">
+                <div class="setting-info">
+                    <h3>Insert attachments into domain's folder</h3>
+                    <div>Insert attachments into domain's folder</div>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" id="multi_window" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </blockquote>
+    </section>
+</body>
+
+</html>

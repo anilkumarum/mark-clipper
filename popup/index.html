@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>markClipper - obisidian web clipper</title>
+    <script type="module" src="/crx-hmr.js"></script>
+    <script type="module" src="./js/popup.js"></script>
+</head>
+
+<body>
+    <h2><img src="/icon.png" alt=""> markClipper</h2>
+    <label class="vault-list">
+        <span>Current vault:</span>
+        <select name="vault-list" id="vault_list"></select>
+    </label>
+    <main>
+        <button style="--btn-clr:dodgerblue" id="bookmark">
+            <svg class="bookmark" viewBox="0 0 24 24">
+                <path />
+            </svg>
+            <div>
+                <div>Insert Tab URL</div>
+                <select name="note-list" id="note_list">
+                    <option value="copy">Copy</option>
+                </select>
+            </div>
+        </button>
+        <button style="--btn-clr:#ff6600" id="screenshot">
+            <svg class="screenshot" viewBox="0 0 24 24">
+                <path />
+            </svg>
+            <div>
+                <div>Capture screenshot</div>
+                <kbd>Alt+S</kbd>
+            </div>
+        </button>
+
+        <select name="tabs" style="margin-bottom: -1.8em">
+            <option value="current">Current Tab</option>
+            <option value="all">All open Tab</option>
+        </select>
+        <button style="--btn-clr:limegreen" id="clip_article">
+            <svg class="article" viewBox="0 0 24 24">
+                <path />
+            </svg>
+            <div>
+                <div>Clip Article</div>
+            </div>
+        </button>
+
+        <button style="--btn-clr:#9932cc" id="select_text">
+            <svg class="select" viewBox="0 0 24 24">
+                <path />
+            </svg>
+            <div>
+                <div>Select Text</div>
+            </div>
+        </button>
+    </main>
+    <output id="snackbar" hidden></output>
+</body>
+
+</html>

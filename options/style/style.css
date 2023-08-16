@@ -1,0 +1,83 @@
+:root {
+	--card: 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	--main-clr: hsl(289, 85%, 34%);
+	--border: 1.6px solid #ccc;
+	--bg-bgc: hsl(0, 0%, 94%);
+	--block-bgc: #fff;
+	--head-bgc: whitesmoke;
+	--toast-bgc: #333;
+	--toast-txt: rgb(255, 208, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--card: 0 1px 4px rgba(200, 200, 200, 0.2), 0 1px 2px rgba(200, 200, 200, 0.3);
+		--txt-clr: #bdc1c6;
+		--bg-bgc: hsl(0, 0%, 8%);
+		--input-bgc: hsl(0, 0%, 24%);
+		--head-bgc: hsl(0, 0%, 18%);
+		--block-bgc: hsl(0, 0%, 14%);
+		--icon-clr: white;
+		--toast-bgc: #5e5f5f;
+		--toast-txt: rgb(245, 140, 3);
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, sans-serif;
+	text-size-adjust: 100%;
+	font-size: 95%;
+	background-color: var(--bg-bgc);
+	color: var(--txt-clr);
+	text-rendering: optimizeSpeed;
+	margin-left: 20%;
+	width: 60%;
+}
+
+select,
+input[type="number"] {
+	border: var(--border);
+	border-radius: 4px;
+	background-color: var(--input-bgc);
+	color: var(--txt-clr);
+	padding: 0.4em 0.5em;
+	font-family: inherit;
+	width: 25ch;
+}
+
+button {
+	border: none;
+	background-color: dodgerblue;
+	text-align: center;
+	box-shadow: var(--card);
+	border-radius: 7px;
+	padding: 0.8em 1.5em;
+	font-weight: bold;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+input[type="checkbox"] {
+	scale: 1.1;
+}
+
+blockquote {
+	margin-inline: 0;
+	margin-top: 0;
+	box-shadow: var(--card);
+	border-radius: 0 0 0.4em 0.4em;
+	background-color: var(--block-bgc);
+	color: var(--txt-clr);
+
+	& .key-item:last-child {
+		border-bottom: none;
+	}
+}
+
+h3 {
+	margin-block: 0;
+}

@@ -1,0 +1,47 @@
+{
+	"manifest_version": 3,
+	"minimum_chrome_version": "116",
+	"offline_enabled": true,
+	"name": "markClipper - obsidian web clipper",
+	"short_name": "markClipper",
+	"description": "markClipper store clipped web contents directly into obsidian local vault",
+	"version": "0.0.1",
+	"author": "NoteRail",
+	"icons": {
+		"128": "icon_128.png",
+		"16": "icon.png"
+	},
+	"action": {
+		"default_title": "Open markClipper",
+		"default_popup": "popup/index.html"
+	},
+	"options_page": "options/index.html",
+	"side_panel": {
+		"default_path": "panel/index.html"
+	},
+
+	"background": {
+		"service_worker": "background/background.js",
+		"type": "module"
+	},
+
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+M",
+				"windows": "Ctrl+Shift+M",
+				"mac": "Ctrl+Shift+M",
+				"linux": "Ctrl+Shift+M"
+			}
+		},
+		"screenshot": {
+			"suggested_key": {
+				"default": "Alt+S"
+			},
+			"description": "Capture screenshot"
+		}
+	},
+
+	"permissions": ["sidePanel", "activeTab", "scripting", "storage", "contextMenus"],
+	"host_permissions": ["<all_urls>"]
+}

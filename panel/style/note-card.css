@@ -1,0 +1,143 @@
+* {
+	box-sizing: border-box;
+}
+
+svg {
+	height: 1.5em;
+	vertical-align: middle;
+	fill: var(--icon-clr);
+	cursor: pointer;
+}
+
+note-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.5em;
+	margin-inline: 2px;
+
+	&::-webkit-scrollbar {
+		background-color: rgba(0, 0, 0, 0.3);
+		width: 4px;
+	}
+
+	&:empty::before {
+		content: "No note opened. click on (open notes) to open notes";
+		white-space: pre-line;
+	}
+}
+
+note-card {
+	box-shadow: var(--card);
+	background-color: var(--note-card-bgc);
+	border-radius: 0.4em;
+	padding-bottom: 0.4em;
+}
+
+note-toolbar {
+	padding: 0.2em 0.6em 0.2em 0.4em;
+	background-color: var(--note-toolbar-bgc);
+	box-shadow: var(--card);
+	border-radius: 0.4em 0.4em 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+
+	& .note-name {
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 15ch;
+		overflow-x: hidden;
+		white-space: nowrap;
+		max-inline-size: 16ch;
+
+		& + clip-icon {
+			opacity: 0;
+			transition: opacity 500ms ease-out;
+
+			& svg {
+				height: 1.1em;
+			}
+		}
+	}
+
+	&:hover {
+		& .note-name + clip-icon,
+		& .close-btn {
+			opacity: 1;
+		}
+	}
+
+	& details {
+		position: relative;
+
+		& summary {
+			list-style-type: none;
+		}
+
+		& > div {
+			position: absolute;
+			top: 2em;
+			box-shadow: var(--card);
+			background-color: var(--popup-bgc);
+			border-radius: 0 0 0.2em 0.2em;
+
+			& div {
+				padding: 0.3em;
+				white-space: nowrap;
+				cursor: pointer;
+
+				&:not(:last-child) {
+					border-bottom: var(--border);
+				}
+			}
+		}
+	}
+
+	& > button {
+		--btn-clr: dodgerblue;
+		box-shadow: var(--card);
+		background-color: var(--btn-clr);
+		border-radius: 0.4em;
+		padding: 0.3em 0.8em;
+		border: none;
+		color: #fff;
+		text-align: center;
+		font-weight: bold;
+		cursor: pointer;
+
+		& svg {
+			height: 1.5em;
+			vertical-align: middle;
+			cursor: pointer;
+		}
+	}
+
+	& .close-btn {
+		position: absolute;
+		right: -0.2em;
+		top: -0.5em;
+		opacity: 0;
+		transition: opacity 500ms ease-out;
+
+		& svg {
+			height: 1.2em;
+		}
+	}
+}
+
+note-content {
+	display: block;
+	width: 100%;
+	padding-inline: 0.4em;
+	min-height: 7lh;
+	max-height: 12lh;
+	overflow-y: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+
+	&::-webkit-scrollbar {
+		background-color: rgba(0, 0, 0, 0.3);
+		width: 2px;
+	}
+}

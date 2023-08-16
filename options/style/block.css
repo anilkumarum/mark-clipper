@@ -1,0 +1,44 @@
+details {
+	box-shadow: var(--card);
+	background-color: var(--block-bgc);
+	padding-bottom: 0.4em;
+	border-radius: 0.4em;
+	margin-bottom: 1em;
+
+	& summary {
+		padding: 0.4em;
+		background-color: var(--head-bgc);
+		box-shadow: var(--card);
+		border-radius: 0.4em 0.4em 0 0;
+		font-size: 1rem;
+
+		& + ul {
+			& li {
+				list-style-type: none;
+				margin-bottom: 0.4em;
+			}
+		}
+	}
+}
+
+section > header,
+blockquote > .key-item,
+blockquote > .app-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	border-bottom: var(--border);
+	align-items: center;
+}
+
+section header {
+	font-weight: bold;
+	border-radius: 0.4em 0.4em 0 0;
+	background-color: var(--head-bgc);
+}
+
+.card {
+	box-shadow: var(--card);
+	border-radius: 4px;
+	margin-block: 1em;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File permission manager for markClipper</title>
+    <script type="module" src="./js/add-vault.js"></script>
+</head>
+
+<body>
+    <h1><img src="/icon_128.png" width="32px" alt=""> markClipper Permission manager</h1>
+    <h2 class="warning">Warning: Don't Close or reload this tab</h2>
+    <p>After reload or close this tab, file permission revoked</p>
+
+    <section>
+        <header>
+            <svg class="folder-status" viewBox="0 0 24 24">
+                <path></path>
+            </svg>
+            <span>Vault permission status</span>
+            <button id="add_vault">
+                <svg class="plus" viewBox="0 0 24 24">
+                    <path></path>
+                </svg>
+                <span>Add Vault</span>
+            </button>
+        </header>
+        <table>
+            <tbody>
+                <td>Vault</td>
+                <td>Permission</td>
+                <td>Action</td>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>

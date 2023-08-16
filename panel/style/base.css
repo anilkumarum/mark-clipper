@@ -1,0 +1,109 @@
+:root {
+	--card: 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	--main-clr: rgb(255, 123, 0);
+	--border: 1.6px solid #ccc;
+	--bg-bgc: hsl(0, 2%, 80%);
+	--txt-clr: hsl(0, 0%, 5%);
+	--icon-clr: hsl(0, 0%, 5%);
+	--note-toolbar-bgc: whitesmoke;
+	--note-card-bgc: hsl(0, 0%, 100%);
+	--popup-bgc: hsl(0, 0%, 100%);
+	--toast-bgc: #6b6a69;
+	--toast-txt: rgb(255, 145, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--card: 0 1px 4px rgba(200, 200, 200, 0.2), 0 1px 2px rgba(200, 200, 200, 0.3);
+		--bg-bgc: hsl(0, 0%, 6%);
+		--txt-clr: #bdc1c6;
+		--note-txt-clr: #bdc1c6;
+		--note-title-clr: hsl(0, 0%, 18%);
+		--note-toolbar-bgc: hsl(0, 0%, 25%);
+		--note-card-bgc: hsl(0, 0%, 20%);
+		--popup-bgc: hsl(0, 0%, 22%);
+		--icon-clr: white;
+		--toast-bgc: #5e5f5f;
+		--toast-txt: rgb(245, 140, 3);
+		--focus-line: white;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: BlinkMacSystemFont, Segoe UI, Roboto, "Fira Sans", Ubuntu, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-size-adjust: 100%;
+	font-size: 95%;
+	height: 100%;
+	margin: 0;
+	text-rendering: optimizeSpeed;
+	background-color: var(--bg-bgc);
+	color: var(--txt-clr);
+	padding: 1px;
+}
+
+svg {
+	height: 1.5em;
+	vertical-align: middle;
+	fill: var(--icon-clr);
+	cursor: pointer;
+}
+
+[popover] {
+	border: none;
+	margin: 0;
+	color: inherit;
+	box-shadow: var(--card);
+	background-color: var(--popup-bgc);
+	inset: unset;
+}
+
+#alert-box {
+	top: 2em;
+	right: 0.5em;
+	padding: 0;
+
+	&:popover-open {
+		@starting-style {
+			translate: 110% 0;
+		}
+
+		translate: 0 0;
+	}
+
+	translate: 110% 0;
+	transition: translate 600ms ease-out;
+}
+
+/* snackbar  */
+#snackbar {
+	min-width: 8em;
+	background-color: var(--toast-bgc);
+	color: var(--toast-txt);
+	text-align: center;
+	border-radius: 1em;
+	padding: 0.6em;
+	position: fixed;
+	z-index: 1000;
+	left: 25%;
+	bottom: 2em;
+	width: max-content;
+	translate: 0 280%;
+	animation: in-out 5s ease-out;
+}
+
+@keyframes in-out {
+	10%,
+	90% {
+		translate: 0 0;
+	}
+}

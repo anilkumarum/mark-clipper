@@ -1,0 +1,144 @@
+:root {
+	--card: 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	--main-clr: hsl(289, 85%, 34%);
+	--border: 1.6px solid #ccc;
+	--txt-clr: black;
+	--bg-bgc: hsl(0, 0%, 94%);
+	--icon-clr: black;
+	--block-bgc: #fff;
+	--header-bgc: whitesmoke;
+	--tbl-border: hsl(0, 1%, 85%);
+	--toast-bgc: #333;
+	--toast-txt: rgb(255, 208, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--card: 0 1px 4px rgba(200, 200, 200, 0.2), 0 1px 2px rgba(200, 200, 200, 0.3);
+		--txt-clr: #bdc1c6;
+		--bg-bgc: hsl(0, 0%, 8%);
+		--input-bgc: hsl(0, 0%, 24%);
+		--icon-clr: white;
+		--header-bgc: hsl(0, 0%, 20%);
+		--block-bgc: hsl(0, 0%, 14%);
+		--tbl-border: hsl(0, 1%, 28%);
+		--code-clr: hsl(0, 1%, 35%);
+		--toast-bgc: #5e5f5f;
+		--toast-txt: rgb(245, 140, 3);
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, sans-serif;
+	text-size-adjust: 100%;
+	font-size: 100%;
+	background-color: var(--bg-bgc);
+	color: var(--txt-clr);
+	text-rendering: optimizeSpeed;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+button {
+	--btn-clr: dodgerblue;
+	box-shadow: var(--card);
+	background-color: var(--btn-clr);
+	border-radius: 0.4em;
+	padding: 0.5em 0.8em;
+	border: none;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+
+	&:disabled {
+		background-color: grey;
+		cursor: not-allowed;
+	}
+}
+
+.warning {
+	color: red;
+	margin-bottom: 0;
+
+	& + p {
+		margin-top: 2px;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	background-color: var(--block-bgc);
+
+	& td,
+	& th {
+		border: 1px solid var(--tbl-border);
+		text-align: left;
+		padding: 0.5em 1.2em;
+	}
+
+	& tr:nth-child(even) {
+		background-color: var(--tbl-border);
+	}
+
+	& kbd {
+		font-weight: bold;
+		font-size: 0.9rem;
+	}
+}
+
+section {
+	min-width: 48ch;
+
+	& header {
+		background-color: var(--header-bgc);
+		box-shadow: var(--card);
+		padding: 0.6em;
+		border-radius: 0.4em 0.4em 0 0;
+		display: flex;
+		align-items: center;
+
+		& button {
+			margin-left: auto;
+		}
+	}
+}
+
+svg {
+	fill: var(--icon-clr);
+	height: 1.8em;
+	width: 1.8em;
+	vertical-align: middle;
+	cursor: pointer;
+
+	&.plus path {
+		d: path("M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z");
+	}
+
+	&.folder-status path {
+		d: path(
+			"M15,12H16.5V16.25L19.36,17.94L18.61,19.16L15,17V12M19,8H3V18H9.29C9.1,17.37 9,16.7 9,16A7,7 0 0,1 16,9C17.07,9 18.09,9.24 19,9.67V8M3,20C1.89,20 1,19.1 1,18V6A2,2 0 0,1 3,4H9L11,6H19A2,2 0 0,1 21,8V11.1C22.24,12.36 23,14.09 23,16A7,7 0 0,1 16,23C13.62,23 11.5,21.81 10.25,20H3M16,11A5,5 0 0,0 11,16A5,5 0 0,0 16,21A5,5 0 0,0 21,16A5,5 0 0,0 16,11Z"
+		);
+	}
+
+	&.check path {
+		fill: lime;
+		d: path(
+			"M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"
+		);
+	}
+
+	&.cross path {
+		fill: red;
+		d: path(
+			"M15,12H17V17H15V12M15,18H17V20H15V18M23,16A7,7 0 0,1 16,23C13.62,23 11.5,21.81 10.25,20H3C1.89,20 1,19.1 1,18V6C1,4.89 1.89,4 3,4H9L11,6H19A2,2 0 0,1 21,8V11.1C22.24,12.36 23,14.09 23,16M16,11A5,5 0 0,0 11,16A5,5 0 0,0 16,21A5,5 0 0,0 21,16A5,5 0 0,0 16,11Z"
+		);
+	}
+}

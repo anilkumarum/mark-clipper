@@ -1,0 +1,36 @@
+note-opener {
+	padding: 0.3em 0.6em;
+	margin-bottom: 3px;
+	background-color: var(--note-toolbar-bgc);
+	box-shadow: var(--card);
+	border-radius: 0.4em 0.4em 0 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+label::before {
+	content: url(/assets/vault.svg);
+	vertical-align: middle;
+}
+
+select {
+	border: var(--border);
+	border-radius: 4px;
+	background-color: var(--input-bgc);
+	color: var(--txt-clr);
+	font-family: inherit;
+	max-width: 10ch;
+}
+
+button {
+	--btn-clr: dodgerblue;
+	box-shadow: var(--card);
+	background-color: var(--btn-clr);
+	border-radius: 0.4em;
+	padding: 0.3em 0.5em;
+	border: none;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+}

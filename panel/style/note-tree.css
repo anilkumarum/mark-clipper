@@ -1,0 +1,95 @@
+:host {
+	--stem-clr: hsl(0, 0%, 70%);
+	width: max-content;
+	padding: 0.4em;
+	border-radius: 0 0 0.4em 0.4em;
+}
+
+svg {
+	height: 1.5em;
+	vertical-align: middle;
+	fill: var(--icon-clr);
+	cursor: pointer;
+}
+
+/* tree-view */
+ul {
+	--pd-left: 2em;
+	--vrt-stem-left: 0.4em;
+	padding-left: var(--pd-left);
+	margin-block: 0;
+	position: relative;
+	isolation: isolate;
+	animation: nested-open 500ms ease-out forwards;
+
+	&::before {
+		content: " ";
+		position: absolute;
+		height: 100%;
+		width: 2px;
+		background-color: var(--stem-clr);
+		left: 0.4em;
+		top: -0.23em;
+	}
+
+	&:hover::before {
+		background-color: red;
+	}
+
+	& li {
+		list-style-type: none;
+		position: relative;
+
+		&::before {
+			content: " ";
+			position: absolute;
+			height: 2px;
+			width: calc(var(--pd-left) - var(--vrt-stem-left));
+			background-color: var(--stem-clr);
+			top: 0.8em;
+			left: calc(var(--vrt-stem-left) - var(--pd-left));
+			z-index: -1;
+		}
+
+		&:hover::before {
+			background-color: red;
+		}
+	}
+}
+
+.tree-item > div {
+	cursor: pointer;
+	border-radius: 0.2em;
+
+	&.disabled {
+		background-color: hsl(0, 2%, 92%);
+		color: hsl(0, 0%, 55%);
+		cursor: not-allowed;
+	}
+
+	&.selected {
+		background-color: rgba(241, 82, 82, 0.7);
+	}
+
+	&:hover {
+		background-color: hsl(285, 72%, 89%);
+	}
+
+	&:active {
+		outline: 1px dashed rgb(145, 7, 145);
+	}
+
+	& span {
+		font-size: 0.9rem;
+	}
+}
+
+@keyframes nested-open {
+	from {
+		scale: 0;
+	}
+
+	to {
+		scale: 1;
+	}
+}
