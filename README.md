@@ -19,8 +19,8 @@ https://github.com/anilkumarum/mark-clipper/assets/119359657/80a60c69-4ea3-4283-
 ✪ Drag-n-drop images and selected text\
 ✪ Zero config and no separate obsidian plugins required\
 ✪ No signup required\
-✪ Free and Open source:https://github.com/anilkumarum/mark-clipper\
-✪ dark mode
+✪ dark mode\
+✪ Free and Open source:https://github.com/anilkumarum/mark-clipper
 
 📌 == FEATURES ==
 
@@ -36,7 +36,7 @@ and add correct image path as markdown link in selected notes
 ✅ Zero config\
 No separate obsidian plugins required
 
-♻️ Permissions
+♻️ Permissions\
 **sidePanel**:Show side pane\
 **activeTab**:Required to read current tab's title and url\
 **scripting**:Inject screenshot and markdown converter tools\
@@ -44,8 +44,8 @@ No separate obsidian plugins required
 **contextMenu**:Add context menu on images
 
 ⌨️ Keyboard shortcuts\
-`Ctrl+Shift+M`: Open extension's popup window
-`Alt+S`: Capture screenshot
+`Ctrl+Shift+M`: Open extension's popup window\
+`Alt+S`: Capture screenshot\
 `Alt+I`: Insert frontmatter (need focus on notes or panel)
 
 ⚠️ Gotchas\
