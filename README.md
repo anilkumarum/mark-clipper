@@ -4,7 +4,7 @@
 
 📢 Obsidian web clipper that save web contents directly to your local vault.
 
-![markclipper intro video](https://raw.githubusercontent.com/anilkumarum/mark-clipper/main/assets/markclipper.webm)
+https://raw.githubusercontent.com/anilkumarum/mark-clipper/main/assets/markclipper.webm
 
 📌 Why you should consider this:\
 ✪ Save web contents directly to obsidian's vault\
