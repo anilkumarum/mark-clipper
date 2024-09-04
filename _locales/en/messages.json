@@ -1,0 +1,329 @@
+{
+	"extName": {
+		"message": "markClipper - obsidian web clipper",
+		"description": "Extension name"
+	},
+	"extDescription": {
+		"message": "markClipper insert clipped web contents directly into obsidian local vault. No config required. Highlighter. Open source",
+		"description": "Extension Description"
+	},
+
+	"open_markclipper": {
+		"message": "Open markClipper  (Ctrl+Shift+X)",
+		"description": "Clip to Obsidian"
+	},
+
+	"clip_to_obsidian": {
+		"message": "Clip to Obsidian",
+		"description": "Clip to Obsidian"
+	},
+
+	"create_new_note": {
+		"message": "Create new note",
+		"description": "Create new note"
+	},
+
+	"vault_permission": {
+		"message": "Vault Permission",
+		"description": "Vault Permission"
+	},
+
+	"current_vault": {
+		"message": "Current vault:",
+		"description": "Current vault:"
+	},
+
+	"bookmark_tab": {
+		"message": "Bookmark Tab",
+		"description": "Bookmark Tab"
+	},
+
+	"capture_screenshot": {
+		"message": "Capture screenshot",
+		"description": "Capture screenshot"
+	},
+
+	"clip_article": {
+		"message": "Clip Article",
+		"description": "Clip Article"
+	},
+
+	"multi_select_text": {
+		"message": "Multi Select Text",
+		"description": "Multi Select Text"
+	},
+
+	"open_side_panel": {
+		"message": "Open side panel",
+		"description": "Open side panel"
+	},
+	"permission_manager": {
+		"message": "markClipper Permission manager",
+		"description": "markClipper Permission manager"
+	},
+
+	"vault_permission_status": {
+		"message": "Vault permission status",
+		"description": "Vault permission status"
+	},
+
+	"add_vault": {
+		"message": "Add Vault",
+		"description": "Add Vault"
+	},
+
+	"permission": {
+		"message": "Permission",
+		"description": "Permission"
+	},
+
+	"action": {
+		"message": "Action",
+		"description": "Action"
+	},
+
+	"granted": {
+		"message": "Granted",
+		"description": "Granted"
+	},
+
+	"revoke": {
+		"message": "Revoke",
+		"description": "Revoke"
+	},
+
+	"open_notes": {
+		"message": "Open Notes",
+		"description": "Open Notes"
+	},
+
+	"add_frontmatter": {
+		"message": "Add frontmatter",
+		"description": "Add frontmatter"
+	},
+
+	"download_images": {
+		"message": "Download Images",
+		"description": "Download Images"
+	},
+
+	"word_wrap": {
+		"message": "Word Wrap",
+		"description": "Word Wrap"
+	},
+
+	"switch_vault": {
+		"message": "Switch Vault",
+		"description": "Switch Vault"
+	},
+
+	"copied": {
+		"message": "Copied",
+		"description": "Copied"
+	},
+
+	"tab_link_inserted": {
+		"message": "Tab link inserted",
+		"description": "Tab link inserted"
+	},
+
+	"export": {
+		"message": "Export",
+		"description": "Export"
+	},
+
+	"restore_open_notes": {
+		"message": "Restore open notes",
+		"description": "Restore open notes"
+	},
+
+	"cancel": {
+		"message": "Cancel",
+		"description": "Cancel"
+	},
+
+	"restore": {
+		"message": "Restore",
+		"description": "Restore"
+	},
+
+	"ctrl_c_tooltip": {
+		"message": "turn on/off ctrl+c listener on webpage",
+		"description": "ctrl+c listener tooltip"
+	},
+
+	"configuration": {
+		"message": "Configuration",
+		"description": "Configuration"
+	},
+
+	"clip_selected": {
+		"message": "Clip Selected",
+		"description": "Clip Selected"
+	},
+
+	"cancel_selection": {
+		"message": "Cancel Selection",
+		"description": "Cancel Selection"
+	},
+
+	"revoked": {
+		"message": "Revoked",
+		"description": "Revoked"
+	},
+
+	"grant_access": {
+		"message": "Grant Access",
+		"description": "Grant Access"
+	},
+
+	"permission_denied": {
+		"message": "Permission denied",
+		"description": "Permission denied"
+	},
+
+	"selected_text_inserted": {
+		"message": "Selected text inserted",
+		"description": "Selected text inserted"
+	},
+
+	"image_inserted": {
+		"message": "Image inserted",
+		"description": "Image inserted"
+	},
+
+	"save_pdf_file": {
+		"message": "Insert PDF file",
+		"description": "Insert PDF file"
+	},
+
+	"insert_frontmatter": {
+		"message": "Insert frontMatter",
+		"description": "Insert frontMatter"
+	},
+
+	"insert_meta_data": {
+		"message": "Insert Meta Data",
+		"description": "Insert Meta Data"
+	},
+
+	"edit_filename": {
+		"message": "Edit filename",
+		"description": "Edit filename"
+	},
+
+	"append_content": {
+		"message": "Append content",
+		"description": "Append content"
+	},
+
+	"toggle_text_wrap": {
+		"message": "Toggle text wrap",
+		"description": "Toggle text wrap"
+	},
+
+	"open_file_drawer": {
+		"message": "Open file drawer",
+		"description": "Open file drawer"
+	},
+
+	"export_all_notes": {
+		"message": "Export All notes",
+		"description": "Export All notes"
+	},
+
+	"export_all": {
+		"message": "Export All",
+		"description": "Export All"
+	},
+
+	"vault_permission_required": {
+		"message": "🗂 Vault Permission Required",
+		"description": "Vault Permission Required"
+	},
+
+	"permission_required": {
+		"message": "Permission Required",
+		"description": "Permission Required"
+	},
+
+	"grant_permission": {
+		"message": "Grant Permission",
+		"description": "Grant Permission"
+	},
+
+	"grant_permission2": {
+		"message": "Grant Permission",
+		"description": "Grant Permission"
+	},
+
+	"add_contentmenu_on": {
+		"message": "Add ContentMenu on",
+		"description": "Add ContentMenu on"
+	},
+
+	"frontmatter_properties": {
+		"message": "Frontmatter (Meta data) properties",
+		"description": "Frontmatter (Meta data) properties"
+	},
+
+	"change_font_family": {
+		"message": "Change font family",
+		"description": "Change font family"
+	},
+
+	"background_themes": {
+		"message": "Background themes",
+		"description": "Background themes"
+	},
+
+	"enable_highlighter": {
+		"message": "🖍️ Enable Highlighter",
+		"description": "🖍️ Enable Highlighter"
+	},
+
+	"download_clipped_images": {
+		"message": "Download clipped images",
+		"description": "Download clipped images"
+	},
+
+	"downloaded_images_folder": {
+		"message": "Download images folder",
+		"description": "Download images folder"
+	},
+
+	"basic_editing_support": {
+		"message": "Basic Editing Support",
+		"description": "Basic Editing Support"
+	},
+
+	"save_highlights": {
+		"message": "🖍️ Save highlights",
+		"description": "🖍️ Save highlights"
+	},
+
+	"summarize_following_content_in_bullet_points": {
+		"message": "Summarize following content in bullet points",
+		"description": "Summarize following content in bullet points"
+	},
+
+	"create_mindmap_of_following_content": {
+		"message": "Create mindmap of following content",
+		"description": "Create mindmap of following content"
+	},
+
+	"show_highlight_of_following_content_in_bullet_points": {
+		"message": "Show highlight of following content in bullet points",
+		"description": "Show highlight of following content in bullet points"
+	},
+
+	"create_new_note_folder_path": {
+		"message": "Create new note & clip article folder path",
+		"description": "Create new note & clip article folder path"
+	},
+
+	"create_new_note_filename_format": {
+		"message": "Create new note & clip article filename format",
+		"description": "Create new note & clip article filename format"
+	}
+}
