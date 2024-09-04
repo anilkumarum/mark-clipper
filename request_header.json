@@ -1,0 +1,17 @@
+[
+	{
+		"id": 2,
+		"priority": 1,
+		"action": {
+			"type": "modifyHeaders",
+			"requestHeaders": [
+				{ "header": "origin", "operation": "set", "value": "https://chatgpt.com" },
+				{ "header": "referer", "operation": "set", "value": "https://chatgpt.com/" }
+			]
+		},
+		"condition": {
+			"requestDomains": ["chatgpt.com"],
+			"resourceTypes": ["xmlhttprequest"]
+		}
+	}
+]

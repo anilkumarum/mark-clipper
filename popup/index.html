@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>markClipper - obisidian web clipper</title>
     <script type="module" src="/crx-hmr.js"></script>
-    <script type="module" src="./js/popup.js"></script>
 </head>
 
 <body>
-    <h2><img src="/icon.png" alt=""> markClipper</h2>
+    <h2><img src="/icon-24.png" alt="" style="vertical-align:middle"> markClipper</h2>
+
     <label class="vault-list">
-        <span>Current vault:</span>
+        <a href="/permission/index.html" target="_blank" rel="noopener noreferrer" style="color: inherit;"
+            title="Open vault permission manager">
+            🗂️ <span id="current_vault"> Current vault:</span>
+        </a>
         <select name="vault-list" id="vault_list"></select>
     </label>
+
     <main>
         <button style="--btn-clr:dodgerblue" id="bookmark">
-            <svg class="bookmark" viewBox="0 0 24 24">
+            <svg class=" bookmark" viewBox="0 0 24 24">
                 <path />
             </svg>
             <div>
-                <div>Insert Tab URL</div>
+                <div id="bookmark_tab">Bookmark</div>
                 <select name="note-list" id="note_list">
                     <option value="copy">Copy</option>
                 </select>
@@ -32,34 +36,48 @@
                 <path />
             </svg>
             <div>
-                <div>Capture screenshot</div>
+                <div id="capture_screenshot">Capture screenshot</div>
                 <kbd>Alt+S</kbd>
             </div>
         </button>
 
-        <select name="tabs" style="margin-bottom: -1.8em">
-            <option value="current">Current Tab</option>
-            <option value="all">All open Tab</option>
+        <select name="tabs" style="margin-bottom: -1.8em" id="article_clip_type">
+            <option value="full_page">Full page</option>
+            <option value="summary">AI Summary</option>
+            <option value="mindmap">AI Mindmap</option>
+            <option value="highlight">AI Highlight</option>
         </select>
-        <button style="--btn-clr:limegreen" id="clip_article">
+        <button style="--btn-clr:limegreen" id="clipArticle">
             <svg class="article" viewBox="0 0 24 24">
                 <path />
             </svg>
             <div>
-                <div>Clip Article</div>
+                <div id="clip_article">Clip Article</div>
+                <kbd>Alt+A</kbd>
             </div>
         </button>
 
-        <button style="--btn-clr:#9932cc" id="select_text">
+        <button style="--btn-clr:#9932cc" id="manualClipArticle">
             <svg class="select" viewBox="0 0 24 24">
                 <path />
             </svg>
             <div>
-                <div>Select Text</div>
+                <div id="multi_select_text">Multi Select Text</div>
+                <kbd>Alt+M</kbd>
             </div>
         </button>
+
+        <select name="note-list" style="margin-bottom: -1.8em" id="pdf_note_list" hidden></select>
+        <button style="--btn-clr:red" id="save_pdf_btn">
+            <svg class="pdf" viewBox="0 0 1024 1024">
+                <path />
+            </svg>
+            <div id="save_pdf_file">Save PDF file</div>
+        </button>
     </main>
+    <div id="open_panel"> <span id="open_side_panel">Open side panel</span> (<kbd>Alt+T</kbd>)</div>
     <output id="snackbar" hidden></output>
+    <script type="module" src="./js/popup.js"></script>
 </body>
 
 </html>

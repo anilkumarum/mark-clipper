@@ -1,0 +1,77 @@
+top-toolbar {
+	padding: 0.3em 0.6em;
+	margin-block: -1px 3px;
+	background-color: var(--note-toolbar-bgc);
+	box-shadow: var(--card);
+	border-radius: 0.4em 0.4em 0 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+restore-note-dialog[popover] {
+	margin: auto;
+	inset: 0;
+	text-align: center;
+}
+
+copy-listener {
+	position: fixed;
+	bottom: 0.3em;
+	left: 0.5em;
+
+	& svg {
+		height: 1.2em;
+	}
+
+	& clip-icon:state(checked) svg {
+		animation: beacon 3s infinite alternate;
+		transform-origin: center;
+		fill: orange;
+
+		& line {
+			display: none;
+		}
+	}
+}
+
+#note-drawer {
+	inset: 0;
+	padding: 0;
+
+	&:popover-open {
+		@starting-style {
+			translate: -150% 0;
+		}
+
+		translate: 0 0;
+	}
+	translate: -150% 0;
+	transition: translate 600ms ease-out;
+}
+
+#alert-box {
+	top: 2em;
+	right: 0.5em;
+	padding: 0;
+
+	&:popover-open {
+		@starting-style {
+			translate: 110% 0;
+		}
+
+		translate: 0 0;
+	}
+
+	translate: 110% 0;
+	transition: translate 600ms ease-out;
+}
+
+@keyframes beacon {
+	from {
+		scale: 1.1;
+	}
+	to {
+		scale: 0.9;
+	}
+}

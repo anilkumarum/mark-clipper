@@ -105,6 +105,333 @@
             </div>
         </blockquote>
     </section>
+    <details open>
+        <summary id="frontmatter_properties">Frontmatter (Meta data) properties</summary>
+
+        <ul id="frontMatter">
+            <li>
+                <label>
+                    <input type="checkbox" id="createdAt" checked>
+                    <span>CreatedAt</span>
+                    <select name="createdAt">
+                        <option value='{ "dateStyle": "full" }'>Weekday, DD Month YYYY</option>
+                        <option value='{ "dateStyle": "long" }'>DD Month YYYY</option>
+                        <option value='{ "dateStyle": "short" }'>DD/MM/YYYY</option>
+                        <option value='yyyy-mm-dd'>YYYY/MM/DD</option>
+                        <option value='{ "dateStyle": "full","timeStyle":"short" }'>Weekday, DD Month YYYY at HH:MM
+                        </option>
+                        <option value='{ "dateStyle": "long","timeStyle":"short" }'>DD Month YYYY at HH:MM</option>
+                        <option value='{ "dateStyle": "medium","timeStyle":"short" }' selected>DD Month YYYY HH:MM
+                        </option>
+                        <option value='{ "dateStyle": "short","timeStyle":"short" }'>DD/MM/YYYY, HH:MM</option>
+                    </select>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="title" checked>
+                    <span>Title</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="source" checked>
+                    <span>Source</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="tags" checked>
+                    <span>Tags</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="author" checked>
+                    <span>Author</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="writtenAt">
+                    <span>WrittenAt</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="domain" name="domain">
+                    <span>Domain</span>
+                </label>
+                <label hidden>(reverse <input type="checkbox" id="domain" value="reverse">)</label>
+            </li>
+        </ul>
+    </details>
+
+    <section class="btn-box">
+        <a href="/guide/how-to-use.html" target="_blank" rel="noopener noreferrer">
+            <button>Guide</button>
+        </a>
+        <a href="/guide/changelog.html" target="_blank" rel="noopener noreferrer">
+            <button style="background-color: #03d171">Changelong</button>
+        </a>
+
+        <a href="mailto:noterailhelp@gmail.com" target=" _blank" rel="noopener noreferrer">
+            <button style="background-color: #00fff2">Support</button>
+        </a>
+
+        <a href="https://github.com/anilkumarum/mark-clipper/issues" target="_blank" rel="noopener noreferrer">
+            <button style="background-color: #ff3300">Report Issues</button>
+        </a>
+        <a href="/permission/index.html" target="_blank" rel="noopener noreferrer" style="margin-left: auto;">
+            <button style="background-color: #8400ff;">🗂️ <span id="vault_permission">Vault Permission</span></button>
+        </a>
+    </section>
+
+    <section class="shortcut-list card" id="settingList">
+        <blockquote>
+            <div class="config-item">
+                <div class="setting-info">
+                    <h3 id="enable_highlighter">🖍️ Enable Highlighter</h3>
+                    <div>
+                        <span>show saved highlighted text</span>
+                    </div>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" id="highlighter" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="config-item">
+                <div class="setting-info">
+                    <h3 id="create_new_note_folder_path">Create new note & clip article folder path</h3>
+                    <div>Update folder path for new note. Add "/" for nested folder</div>
+                </div>
+
+                <label>
+                    <span>Vault folder/</span>
+                    <input type="text" name="clip-article-folder" id="clip-article-folder">
+                </label>
+            </div>
+
+            <div class="config-item">
+                <div class="setting-info">
+                    <h3 id="create_new_note_filename_format">Create new note & clip article filename format</h3>
+                    <div>Update note filename format for Create new note & Clip article</div>
+                </div>
+
+                <label>
+                    <select name="filename-format" id="filename-format">
+                        <option value="date-pageTitle">{date}-{pageTitle}</option>
+                        <option value="reverseDate-pageTitle">{reverseDate}-{pageTitle}</option>
+                        <option value="pageTitle-date">{pageTitle}-{date}</option>
+                        <option value="domain-pageTitle">{domain}-{pageTitle}</option>
+                        <option value="pageTitle-domain">{pageTitle}-{domain}</option>
+                        <option value="reverseDomain-pageTitle">{reverseDomain}-{pageTitle}</option>
+                        <option value="date-domain-pageTitle">{date}-{domain}-{pageTitle}</option>
+                        <option value="date-pageTitle-domain">{date}-{pageTitle}-{domain}</option>
+                        <option value="domain-date-pageTitle">{domain}-{date}-{pageTitle}</option>
+                        <option value="reverseDomain-date-pageTitle">{reverseDomain}-{date}-{pageTitle}</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="config-item">
+                <div class="setting-info">
+                    <h3 id="download_clipped_images">Download clipped images</h3>
+                    <div>Download images from clipped article,selected text</div>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" id="saveNoteImages" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="config-item">
+                <div class="setting-info">
+                    <h3 id="downloaded_images_folder">Downloaded images folder</h3>
+                    <div>Downloaded images folder inside vault. Add "/" for nested folder. <br>
+                        Type <q>date-wise</q> or <q>domain-wise</q> for dynamic folder
+                    </div>
+                </div>
+
+                <label>
+                    <span>Vault folder/</span>
+                    <input type="text" name="image-folder" id="image-folder">
+                </label>
+            </div>
+        </blockquote>
+    </section>
+
+    <h3 style="margin-top: 0.5em">Theme </h3>
+    <section class="shortcut-list card" id="theme-config">
+        <blockquote>
+            <div class="config-item">
+                <div class="setting-info">
+
+
+                    <h3 id="change_font_family">Change font family</h3>
+                    <div>Change font family</div>
+                </div>
+
+                <select name="font-list" id="font-family">
+                    <option value="system-ui">Default</option>
+                    <option value="Arial">Arial</option>
+                    <option value="cursive">Cursive</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="monospace">monospace</option>
+                    <option value="Verdana">Verdana </option>
+                    <option value="'Times New Roman'">Times New Roman</option>
+                    <option value="Tahoma">Tahoma</option>
+                </select>
+            </div>
+            <div class="config-item">
+                <div class="setting-info">
+                    <h3>Change font size</h3>
+                    <div>Change font size</div>
+                </div>
+
+                <label> <input type="number" value="15" id="font-size" minlength="2" maxlength="3">px</label>
+            </div>
+            <div class="config-item">
+                <div class="setting-info">
+                    <h3>Text colour</h3>
+                </div>
+                <input type="color" name="text-clr" id="text-clr">
+            </div>
+            <details style="padding: 0.4em 1em;">
+                <summary id="background_themes">Background themes</summary>
+                <ul id="theme-list"></ul>
+            </details>
+        </blockquote>
+    </section>
+
+    <h2> <a href="#keyboard-shortcuts">keyboard shortcuts </a></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Shortcut</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Open extension popup</td>
+                <td><kbd>Alt + M</kbd></td>
+            </tr>
+            <tr>
+                <td>Capture screenshot</td>
+                <td><kbd>Alt + S</kbd></td>
+            </tr>
+            <tr>
+                <td>Clip Article (when popup window open)</td>
+                <td><kbd>Alt + A</kbd></td>
+            </tr>
+            <tr>
+                <td>Multi select text (when popup window open)</td>
+                <td><kbd>Alt + M</kbd></td>
+            </tr>
+            <tr>
+                <td>Open side panel (when popup window open)</td>
+                <td><kbd>Alt + T</kbd></td>
+            </tr>
+            <tr>
+                <td>Extend selection (when copy listener on)</td>
+                <td><kbd>Shift + Space</kbd></td>
+            </tr>
+            <tr>
+                <td>Highlight text (when copy listener on)</td>
+                <td><kbd>Alt + H</kbd></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <table style="margin-top: 1em;">
+        <caption>
+            Side panel key shortcuts
+        </caption>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Shortcut</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Insert Frontmatter</td>
+                <td><kbd>Alt + I</kbd></td>
+            </tr>
+            <tr>
+                <td>Toggle word wrap</td>
+                <td><kbd>Alt + Z</kbd></td>
+            </tr>
+            <tr>
+                <td>Close all opened notes</td>
+                <td><kbd>Escape</kbd></td>
+            </tr>
+            <tr>
+                <td>Export all notes</td>
+                <td><kbd>Ctrl+ Shift + E</kbd></td>
+            </tr>
+
+            <tr>
+                <td>Export current note</td>
+                <td><kbd>Ctrl+ E</kbd></td>
+            </tr>
+            <tr>
+                <td>Restore opened notes</td>
+                <td><kbd>Alt + O</kbd></td>
+            </tr>
+            <tr>
+                <td>Open file drawer</td>
+                <td><kbd>Alt + D</kbd></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <h2>Basic Editing Support</h2>
+    <ul>
+        <li>Add closing marker and bracket when opening marker or bracket type</li>
+        <li>Auto format pasted or dropped link url <code>[selected text](pasted url)</code> </li>
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th> Format Action</th>
+                <th>Keyboard Shortcut</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Delete line</td>
+                <td>Delete</td>
+            </tr>
+            <tr>
+                <td>Undo</td>
+                <td>Ctrl+Z</td>
+            </tr>
+            <tr>
+                <td>Redo</td>
+                <td>Ctrl+Y</td>
+            </tr>
+            <tr>
+                <td>Format Bold</td>
+                <td>Ctrl+B</td>
+            </tr>
+            <tr>
+                <td>Format Italic</td>
+                <td>Ctrl+I</td>
+            </tr>
+        </tbody>
+    </table>
+    <output id="snackbar" hidden></output>
 </body>
 
 </html>

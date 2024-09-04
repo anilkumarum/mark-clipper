@@ -38,3 +38,29 @@ $on(clipArticleBtn, "click", async function () {
 
 const selectText = eId("select_text");
 $on(selectText, "click", openPanel);
+
+chrome.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+	const tabUrl = tabs[0].url;
+	if (tabUrl?.endsWith(".pdf")) {
+		const pdfSaveBtn = eId("save_pdf_btn");
+		const noteSelectElem = pdfSaveBtn.previousElementSibling;
+		noteSelectElem.hidden = false;
+		$on(pdfSaveBtn, "click", insertPDFFile.bind(null, tabUrl, noteSelectElem.value));
+		//hide clip article button
+		clipArticleBtn.style.display = "none";
+		clipArticleBtn.previousElementSibling.style.display = "none";
+	}
+});
+
+//keyboard shortcuts
+const keys = {
+	KeyA: autoClipArticle,
+	KeyM: manualClipArticle,
+	KeyS: injectCropper,
+	KeyT: () => openPanel({ msg: "selectText" }),
+};
+
+function onKeyDown(evt) {
+	if (evt.altKey || evt.metaKey) keys[evt.code]?.();
+}
+document.body.addEventListener("keydown", onKeyDown);

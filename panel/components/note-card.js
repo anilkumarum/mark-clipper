@@ -16,6 +16,20 @@ export class NoteCard extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.onNoteSelected();
+
+		if (this.note.imagePaths)
+			for (const img of this.note.imagePaths) this.lastElementChild["images"].set(img.fileName, img.imgSrc);
+	}
+
+	onNoteSelected() {
+		focusedNote?.removeAttribute("selected");
+		focusedNote = this;
+		this.setAttribute("selected", "");
+	}
+
+	disconnectedCallback() {
+		this.focusedNote === this && (this.focusedNote = null);
 	}
 }
 

@@ -1,21 +1,23 @@
 {
 	"manifest_version": 3,
-	"minimum_chrome_version": "116",
+	"minimum_chrome_version": "123",
 	"offline_enabled": true,
-	"name": "markClipper - obsidian web clipper",
+	"default_locale": "en",
+	"name": "__MSG_extName__",
+	"description": "__MSG_extDescription__",
 	"short_name": "markClipper",
-	"description": "markClipper store clipped web contents directly into obsidian local vault",
-	"version": "0.0.1",
+	"version": "1.0.11",
 	"author": "NoteRail",
 	"icons": {
-		"128": "icon_128.png",
-		"16": "icon.png"
+		"128": "icon-128.png",
+		"24": "icon-24.png"
 	},
 	"action": {
-		"default_title": "Open markClipper",
+		"default_title": "__MSG_open_markclipper__",
 		"default_popup": "popup/index.html"
 	},
 	"options_page": "options/index.html",
+
 	"side_panel": {
 		"default_path": "panel/index.html"
 	},
@@ -28,20 +30,63 @@
 	"commands": {
 		"_execute_action": {
 			"suggested_key": {
-				"default": "Ctrl+Shift+M",
-				"windows": "Ctrl+Shift+M",
-				"mac": "Ctrl+Shift+M",
-				"linux": "Ctrl+Shift+M"
+				"default": "Ctrl+Shift+X",
+				"windows": "Ctrl+Shift+X",
+				"mac": "Ctrl+Shift+X",
+				"linux": "Ctrl+Shift+X"
 			}
 		},
+
 		"screenshot": {
 			"suggested_key": {
 				"default": "Alt+S"
 			},
-			"description": "Capture screenshot"
+			"description": "__MSG_capture_screenshot__"
+		},
+
+		"multi_select_text": {
+			"suggested_key": {
+				"default": "Alt+M"
+			},
+			"description": "__MSG_multi_select_text__"
 		}
 	},
 
-	"permissions": ["sidePanel", "activeTab", "scripting", "storage", "contextMenus"],
-	"host_permissions": ["<all_urls>"]
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"scripts/highlighter/Highlighter.js",
+				"scripts/highlighter/highlighterCmd.js",
+				"scripts/highlighter/HighlightRange-3C6JRVT3.js",
+				"scripts/clip-article/auto-clip-article.js",
+				"scripts/generator/enums.js",
+				"scripts/generator/md-generator.js",
+				"scripts/generator/md-txt-generator.js",
+				"scripts/screenshot/crop-box-RFCKS4QZ.js",
+				"scripts/screenshot/shot-cropper-7YRZYKE2.css",
+				"scripts/toast-script.js"
+			],
+			"matches": ["<all_urls>"]
+		}
+	],
+
+	"declarative_net_request": {
+		"rule_resources": [
+			{
+				"id": "ruleset_request_header",
+				"enabled": true,
+				"path": "./request_header.json"
+			}
+		]
+	},
+
+	"permissions": [
+		"sidePanel",
+		"contextMenus",
+		"declarativeNetRequestWithHostAccess",
+		"activeTab",
+		"scripting",
+		"storage"
+	],
+	"optional_host_permissions": ["<all_urls>"]
 }

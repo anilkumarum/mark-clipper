@@ -11,6 +11,32 @@ export class NoteContent extends HTMLElement {
 		super();
 	}
 	attachments = new Set();
+	images = new Map();
+
+	copyContent() {
+		navigator.clipboard
+			.writeText(this.innerText)
+			.then(() => toast("Copied"))
+			.catch((err) => console.error(err));
+	}
+
+	/**@param {InputEvent} event*/
+	inputMarkHandler = (event) => {
+		if (event.data && markChars.has(event.data)) {
+			const char = event.data;
+			const selection = getSelection();
+			const txtNode = selection.focusNode;
+			if (!(txtNode instanceof Text)) return;
+			if (selection.anchorOffset !== selection.focusOffset) {
+				selection.anchorNode["insertData"](selection.anchorOffset, char);
+				txtNode.insertData(selection.focusOffset, Brackets[char] ? Brackets[char] : char);
+				event.preventDefault();
+			} else {
+				txtNode.insertData(selection.focusOffset, Brackets[char] ? Brackets[char] : char);
+				selection.setPosition(txtNode, selection.focusOffset);
+			}
+		}
+	};
 
 	insertContent(content) {
 		const selection = getSelection();
